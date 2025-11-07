@@ -114,6 +114,109 @@ nav ul li a.active {
   transform: scale(1.05);
 }
 
+/* ------------------------------
+   PROJECTS SECTION
+------------------------------ */
+.projects {
+  background-color: #f9f9f9; /* light gray background */
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.projects h2 {
+  font-size: 2.2em;
+  color: #6a5acd; /* soft purple */
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.projects p {
+  color: #555;
+  font-size: 1.05em;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Project list container */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Individual project card */
+.project-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Project image */
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Project title */
+.project-card h3 {
+  color: #333;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+/* Project description */
+.project-card p {
+  color: #666;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Project buttons */
+.project-card .btn {
+  display: inline-block;
+  background: #6a5acd;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.project-card .btn:hover {
+  background: #483d8b;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .project-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+
 /* ========== CONTACT SECTION ========== */
 .socials {
   margin: 20px 0;
@@ -239,3 +342,4 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
