@@ -1,4 +1,4 @@
-/* 🌌 RESET & GLOBAL STYLES */
+/* 🌌 GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
@@ -11,12 +11,12 @@ html {
 }
 
 body {
-  background: radial-gradient(ellipse at bottom, #0a0129, #000);
+  background: radial-gradient(ellipse at bottom, #0a0129 0%, #000 100%);
   color: #e4e0ff;
   overflow-x: hidden;
 }
 
-/* 🌌 GALAXY BACKGROUND WITH SHOOTING STARS */
+/* 🌠 GALAXY BACKGROUND WITH SHOOTING STARS */
 .background {
   position: fixed;
   top: 0;
@@ -25,57 +25,46 @@ body {
   height: 100%;
   overflow: hidden;
   z-index: -1;
-  background: radial-gradient(ellipse at bottom, #0b0033 0%, #000 100%);
+  background: radial-gradient(ellipse at bottom, #0a0129 0%, #000 100%);
 }
 
-/* ✨ Twinkling Star Layers */
-.background::before,
-.background::after {
+/* Subtle starfield texture */
+.background::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
   width: 200%;
   height: 200%;
-  background: transparent url("https://i.imgur.com/3Rrj1sE.png") repeat;
-  animation: moveStars 100s linear infinite;
+  background: transparent url('https://i.imgur.com/WCzJZ8t.png') repeat;
+  animation: drift 120s linear infinite;
   opacity: 0.4;
 }
 
-.background::after {
-  animation: moveStars 120s linear infinite reverse;
-  opacity: 0.2;
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-500px); }
 }
 
-/* 💫 Shooting Stars */
+/* ✨ Shooting stars animation */
 .shooting-star {
   position: absolute;
   top: 0;
   width: 2px;
-  height: 100px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(0,255,255,0));
-  filter: drop-shadow(0 0 10px #00ffff);
-  opacity: 0;
-  animation: shoot 8s linear infinite;
+  height: 80px;
+  background: linear-gradient(45deg, white, rgba(255,255,255,0));
+  opacity: 0.8;
+  border-radius: 50%;
+  animation: shoot 3s linear infinite;
 }
 
-/* 🌠 Random positions and delays */
-.shooting-star:nth-child(1) { left: 10%; animation-delay: 2s; }
-.shooting-star:nth-child(2) { left: 35%; animation-delay: 5s; }
-.shooting-star:nth-child(3) { left: 55%; animation-delay: 3s; }
-.shooting-star:nth-child(4) { left: 75%; animation-delay: 7s; }
-.shooting-star:nth-child(5) { left: 90%; animation-delay: 4s; }
+.shooting-star:nth-child(1) { left: 10%; animation-delay: 1s; }
+.shooting-star:nth-child(2) { left: 40%; animation-delay: 2s; }
+.shooting-star:nth-child(3) { left: 70%; animation-delay: 3s; }
+.shooting-star:nth-child(4) { left: 85%; animation-delay: 4s; }
+.shooting-star:nth-child(5) { left: 55%; animation-delay: 5s; }
 
-/* 🌌 Starfield movement animation */
-@keyframes moveStars {
-  from { transform: translateY(0); }
-  to { transform: translateY(-1000px); }
-}
-
-/* 💫 Shooting star diagonal animation */
 @keyframes shoot {
   0% {
-    transform: translateY(0) translateX(0) rotate(45deg);
+    transform: translateY(-100px) translateX(0) rotate(45deg);
     opacity: 0;
   }
   10% {
@@ -91,16 +80,12 @@ body {
   }
 }
 
-.section {
-  color: #eae6ff;
-  text-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
-}
-/* ========== HEADER ========== */
+/* 🌈 HEADER */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(20, 10, 40, 0.8);
+  background: rgba(10, 5, 25, 0.8);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
@@ -136,7 +121,7 @@ nav ul li a.active {
   text-shadow: 0 0 10px #00ffff;
 }
 
-/* ========== SECTIONS ========== */
+/* 🌠 SECTIONS */
 .section {
   min-height: 100vh;
   display: flex;
@@ -162,7 +147,7 @@ nav ul li a.active {
   margin: 0 auto;
 }
 
-/* ========== BUTTON ========== */
+/* 💫 BUTTON STYLE */
 .btn {
   display: inline-block;
   margin-top: 25px;
@@ -180,7 +165,7 @@ nav ul li a.active {
   box-shadow: 0 0 25px #00ffff;
 }
 
-/* ========== ABOUT SECTION ========== */
+/* 🌷 ABOUT SECTION */
 .about .content {
   display: flex;
   align-items: center;
@@ -202,7 +187,7 @@ nav ul li a.active {
   transform: scale(1.05);
 }
 
-/* ========== UPCOMING PROJECTS SECTION ========== */
+/* 🚀 PROJECTS SECTION */
 .projects {
   background: rgba(255, 255, 255, 0.03);
   text-align: center;
@@ -211,24 +196,11 @@ nav ul li a.active {
 }
 
 .projects h2 {
-  font-size: 2.4em;
   color: #00ffff;
   text-shadow: 0 0 10px #00ffff;
   margin-bottom: 20px;
-  font-weight: 700;
 }
 
-.projects p {
-  color: #c9c9ff;
-  font-size: 1.05em;
-  margin-bottom: 40px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-
-/* Project list container */
 .project-list {
   display: flex;
   flex-wrap: wrap;
@@ -236,7 +208,6 @@ nav ul li a.active {
   gap: 30px;
 }
 
-/* Individual project card */
 .project-card {
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.1);
@@ -252,7 +223,6 @@ nav ul li a.active {
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
 }
 
-/* Project image */
 .project-card img {
   width: 100%;
   height: 180px;
@@ -261,70 +231,16 @@ nav ul li a.active {
   margin-bottom: 15px;
 }
 
-/* Project title */
 .project-card h3 {
   color: #00ffff;
-  font-size: 1.3em;
-  margin-bottom: 10px;
   text-shadow: 0 0 10px #00ffff;
 }
 
-/* Project description */
 .project-card p {
   color: #d9d2ff;
-  font-size: 0.95em;
-  margin-bottom: 15px;
-  line-height: 1.5;
 }
 
-/* Project buttons */
-.project-card .btn {
-  background: linear-gradient(90deg, #8b5cf6, #00ffff);
-  box-shadow: 0 0 15px #8b5cf6;
-}
-
-.project-card .btn:hover {
-  box-shadow: 0 0 25px #00ffff;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .project-list {
-    flex-direction: column;
-    align-items: center;
-  }
-  .project-card {
-    width: 90%;
-    max-width: 350px;
-  }
-}
-
-/* ========== CONTACT SECTION ========== */
-.socials {
-  margin: 20px 0;
-}
-
-.socials a {
-  margin-right: 20px;
-  text-decoration: none;
-  color: #8b5cf6;
-  font-weight: 600;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.socials a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
-  gap: 15px;
-}
-
+/* 🌙 CONTACT SECTION */
 .feedback-form input,
 .feedback-form textarea {
   padding: 12px;
@@ -332,41 +248,25 @@ nav ul li a.active {
   border-radius: 10px;
   background: rgba(255,255,255,0.05);
   color: #fff;
-  font-size: 1rem;
-  transition: border 0.3s ease;
-}
-
-.feedback-form input:focus,
-.feedback-form textarea:focus {
-  border-color: #00ffff;
 }
 
 .feedback-form button {
   background: linear-gradient(90deg, #8b5cf6, #00ffff);
-  color: #fff;
-  padding: 12px;
   border: none;
   border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  color: #fff;
+  padding: 12px;
   box-shadow: 0 0 15px #8b5cf6;
 }
 
-.feedback-form button:hover {
-  box-shadow: 0 0 25px #00ffff;
-}
-
-/* ========== FOOTER ========== */
 footer {
   background: rgba(10, 5, 25, 0.9);
   text-align: center;
   padding: 20px;
   color: #aaa;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* ========== BACK TO TOP BUTTON ========== */
+/* 🔺 BACK TO TOP */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -383,8 +283,6 @@ footer {
   text-decoration: none;
   box-shadow: 0 0 15px #8b5cf6;
   transition: all 0.3s ease;
-  opacity: 0.9;
-  z-index: 100;
 }
 
 .back-to-top:hover {
@@ -396,9 +294,6 @@ footer {
 html {
   scroll-behavior: smooth;
 }
-
-
-
 
 
 
