@@ -16,10 +16,10 @@ body {
   overflow-x: hidden;
 }
 
-/* 🌌 GALAXY BACKGROUND DESIGN */
+/* 🌌 GALAXY BACKGROUND WITH SHOOTING STARS */
 .background {
   position: fixed;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -28,12 +28,12 @@ body {
   background: radial-gradient(ellipse at bottom, #0b0033 0%, #000 100%);
 }
 
-/* ✨ Twinkling Stars Layer */
+/* ✨ Twinkling Star Layers */
 .background::before,
 .background::after {
   content: "";
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 200%;
   height: 200%;
@@ -43,7 +43,6 @@ body {
 }
 
 .background::after {
-  background-image: url("https://i.imgur.com/3Rrj1sE.png");
   animation: moveStars 120s linear infinite reverse;
   opacity: 0.2;
 }
@@ -53,33 +52,49 @@ body {
   position: absolute;
   top: 0;
   width: 2px;
-  height: 80px;
+  height: 100px;
   background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(0,255,255,0));
-  filter: drop-shadow(0 0 8px #00ffff);
+  filter: drop-shadow(0 0 10px #00ffff);
   opacity: 0;
-  animation: shoot 6s linear infinite;
+  animation: shoot 8s linear infinite;
 }
 
-/* Random positions for the shooting stars */
-.shooting-star:nth-child(1) { left: 15%; animation-delay: 1s; }
-.shooting-star:nth-child(2) { left: 45%; animation-delay: 3s; }
-.shooting-star:nth-child(3) { left: 75%; animation-delay: 5s; }
-.shooting-star:nth-child(4) { left: 25%; animation-delay: 2s; }
-.shooting-star:nth-child(5) { left: 60%; animation-delay: 4s; }
+/* 🌠 Random positions and delays */
+.shooting-star:nth-child(1) { left: 10%; animation-delay: 2s; }
+.shooting-star:nth-child(2) { left: 35%; animation-delay: 5s; }
+.shooting-star:nth-child(3) { left: 55%; animation-delay: 3s; }
+.shooting-star:nth-child(4) { left: 75%; animation-delay: 7s; }
+.shooting-star:nth-child(5) { left: 90%; animation-delay: 4s; }
 
-/* 🌟 Animations */
+/* 🌌 Starfield movement animation */
 @keyframes moveStars {
   from { transform: translateY(0); }
   to { transform: translateY(-1000px); }
 }
 
+/* 💫 Shooting star diagonal animation */
 @keyframes shoot {
-  0% { transform: translateY(0) translateX(0) rotate(45deg); opacity: 0; }
-  10% { opacity: 1; }
-  50% { transform: translateY(400px) translateX(400px) rotate(45deg); opacity: 1; }
-  100% { transform: translateY(800px) translateX(800px) rotate(45deg); opacity: 0; }
+  0% {
+    transform: translateY(0) translateX(0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(400px) translateX(400px) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(800px) translateX(800px) rotate(45deg);
+    opacity: 0;
+  }
 }
 
+.section {
+  color: #eae6ff;
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
+}
 /* ========== HEADER ========== */
 header {
   position: fixed;
@@ -381,6 +396,7 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
 
 
 
