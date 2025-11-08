@@ -30,18 +30,23 @@ body {
 
 /* Subtle starfield texture */
 .background::before {
-  content: "";
+  content: '';
   position: absolute;
-  width: 200%;
-  height: 200%;
-  background: transparent url('https://www.pinterest.com/pin/free-star-night-sky-background-images-under-the-starry-night-sky-photo-background-png-and-vectors--123637952263961921/') repeat;
-  animation: drift 120s linear infinite;
-  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: 
+    50px 80px white, 120px 150px white, 200px 60px white,
+    300px 120px white, 400px 50px white, 500px 200px white,
+    600px 150px white, 700px 80px white, 800px 120px white,
+    900px 40px white, 1000px 200px white, 1100px 90px white;
+  animation: twinkle 5s linear infinite;
+  opacity: 0.6;
 }
 
-@keyframes drift {
-  from { transform: translateY(0); }
-  to { transform: translateY(-500px); }
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
 
 /* ✨ Shooting stars animation */
@@ -294,6 +299,7 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
 
 
 
