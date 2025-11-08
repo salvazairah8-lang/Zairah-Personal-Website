@@ -165,14 +165,20 @@ nav ul li a.active {
   box-shadow: 0 0 25px #00ffff;
 }
 
-/* 🌷 ABOUT SECTION */
 .about .content {
   display: flex;
   align-items: center;
   gap: 60px;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: row; /* Default: text left, image right */
 }
+
+/* Zigzag effect for About section */
+.about.zigzag .content {
+  flex-direction: row-reverse; /* Image left, text right */
+}
+
 
 .about img {
   width: 280px;
@@ -294,6 +300,7 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
 
 
 
