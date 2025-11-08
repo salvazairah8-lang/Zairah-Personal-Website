@@ -34,7 +34,7 @@ body {
   position: absolute;
   width: 200%;
   height: 200%;
-  background: transparent url('https://i.imgur.com/WCzJZ8t.png') repeat;
+  background: transparent url('https://www.pinterest.com/pin/free-star-night-sky-background-images-under-the-starry-night-sky-photo-background-png-and-vectors--123637952263961921/') repeat;
   animation: drift 120s linear infinite;
   opacity: 0.4;
 }
@@ -294,6 +294,7 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
 
 
 
