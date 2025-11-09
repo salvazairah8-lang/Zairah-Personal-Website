@@ -34,7 +34,7 @@ body {
   position: absolute;
   width: 200%;
   height: 200%;
-  background: transparent url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWmSl2U4773RRZxsJeS50YYY-lvcPaP8J9fQ&s') repeat;
+  background: transparent url('https://share.google/resImSzyA2LwGqKqE') repeat;
   animation: drift 120s linear infinite;
   opacity: 0.4;
 }
@@ -300,6 +300,7 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
 
 
 
